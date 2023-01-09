@@ -1,9 +1,30 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import { ref } from "vue"
+import { ref, onMounted, onUnmounted, provide } from "vue"
 import Hamburger from "../src/components/icons/Hamburger.vue"
 import Close from "../src/components/icons/Close.vue"
 
+//// For hiding the navigation on scroll
+onMounted(() => {
+  window.addEventListener('scroll', onScroll);
+  window.addEventListener('mousemove', onMouseMove);
+}) 
+const navStyle = ref("nav-top");
+let lastScrollY = window.scrollY;
+
+const onScroll = () => {
+  if (window.scrollY == 0) {
+    navStyle.value = "nav-top";
+  }
+  else if (lastScrollY < window.scrollY) {
+    navStyle.value = "nav-top nav-hidden";
+  } else {
+    navStyle.value = "";
+  }
+  lastScrollY = window.scrollY;
+}
+
+//// For opening and closing the navigation in mobile
 const menuState = ref("");
 const burgerState = ref("");
 const closeState = ref("");
@@ -17,14 +38,49 @@ const openMenu = () => {
   else {
     menuState.value = "";
     burgerState.value = "";
-    closeState.value = ""
+    closeState.value = "";
   }
 };
+
+//// For light / dark mode
+const z = ref(12); //12 is default for dark mode
+const root = document.querySelector(':root');
+
+//state == true for light mode
+const lightMode = (state) => {
+  if (state) {
+    z.value = 80;
+    root.style.setProperty("--text", "#000");
+    root.style.setProperty("--blue-highlight", "#6752A1");
+    root.style.setProperty("--highlight", "#6752A1");
+  }
+  else {
+    z.value = 12;
+    root.style.setProperty("--text", "#fff");
+    root.style.setProperty("--blue-highlight", "#7BDCF0");
+    root.style.setProperty("--highlight", "#EEE8AA");
+  }
+}
+provide('lightMode', lightMode);
+
+//// For mouse move animation
+const x = ref(0);
+const y = ref(0);
+const onMouseMove = (e) => {
+  x.value = ((e.clientX * 360) / window.innerWidth);
+  y.value = ((e.clientY / window.innerHeight) * 100);
+}
+provide('xPos', x);
+provide('yPos', y);
+provide('mouseEvent', onMouseMove);
 
 </script>
 
 <template>
-  <header id="navBar" class="nav-top">
+  <div
+    class="app-wrapper" 
+    :style="{ backgroundColor: `hsl(${x}, ${y}%, ${z}%)` }">
+    <header id="navBar" :class="navStyle">
     <a class="hamburger" :class="burgerState" @click="openMenu">
       <Hamburger />
     </a>
@@ -45,16 +101,20 @@ const openMenu = () => {
       <a href="./ShilohRodriguesCV_tex.pdf" target="_blank">Resume</a>
     </nav>
   </header>
-  <RouterView />
+    <RouterView />
+  </div>
 </template>
 
 <style scoped>
+  .app-wrapper {
+    transition: 0.1s background-color ease;
+  }
   header {
     position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
-    transition: all 0.2s;
+    transition: transform 0.4s;
   }
   nav a {
     padding-right: 2rem; 
@@ -66,7 +126,6 @@ const openMenu = () => {
   .isActive {
     color: var(--primary) !important;
   }
-
   /* Desktop Styles */
   @media only screen and (min-width: 693px) {
     .hamburger, .close {
@@ -76,7 +135,7 @@ const openMenu = () => {
       width: 100%;
       height: var(--nav-height);
       box-shadow: 0 10px 30px -10px var(--black);
-      background-color: var(--bg);
+      background-color: inherit;
     }
     nav {
       display: flex;
@@ -136,9 +195,11 @@ const openMenu = () => {
       padding: 0 !important;
     }
   }
-
   /* Mobile styles */
   @media only screen and (max-width: 692px) {
+    header {
+      background-color: inherit;
+    }
     nav {
       width: 0;
       overflow-x: hidden;
@@ -150,7 +211,7 @@ const openMenu = () => {
       left: 0;
       height: 100vh;
       font-size: 1.3rem;
-      background-color: var(--bg);
+      background-color: inherit;
       box-shadow: 0 10px 30px -10px var(--black);
       transition: width 0.75s;
     }

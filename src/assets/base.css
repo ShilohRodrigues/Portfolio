@@ -1,6 +1,5 @@
 :root {
-  --bg: #1E1E1E;
-  --header-bg: #2e2e2e;
+  --bg: hsl(0, 0, 12%);
   --primary: #007acc;
   --secondary: #CC7800;
   --tag-color: #004D80;
@@ -10,6 +9,7 @@
   --arrow: gray;
   --black: #000;
   --nav-height: 4rem;
+  --slider-size: 18px;
 }
 
 *,
@@ -112,7 +112,7 @@ p {
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: var(--text);
 }
 
 ul {

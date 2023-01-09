@@ -5,7 +5,6 @@
   height="20px"
   viewBox="0 0 24 24"
   fill="none"
-  stroke="#fff"
   stroke-width="2"
   stroke-linecap="round"
   stroke-linejoin="round"
@@ -20,13 +19,16 @@
 #linkedinIcon {
   stroke-dasharray: 61.13;
   stroke-dashoffset: 61.13;
+  stroke: var(--text);
 }
 #linkedinIcon1 {
   stroke-dasharray: 32;
   stroke-dashoffset: 32;
+  stroke: var(--text);
 }
 #linkedinIcon2 {
   stroke-dasharray: 11.31;
   stroke-dashoffset: 11.31;
+  stroke: var(--text);
 }
 </style>

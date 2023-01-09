@@ -21,6 +21,7 @@ const props = defineProps({
   font-weight: 500;
   white-space: nowrap;
   margin: 0.2rem 0.2rem 0.2rem 0;
+  color: #fff;
 }
     
 </style>

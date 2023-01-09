@@ -9,16 +9,19 @@
 
 <style scoped>
 #instaIcon1 {
+  stroke: var(--text);
   stroke-dasharray: 76.82959747314453;
   stroke-dashoffset: 76.82959747314453;
 }
 #instaIcon2 {
+  stroke: var(--text);
   stroke-dasharray: 29.20639991760254;
   stroke-dashoffset: 29.20639991760254;
 }
 #instaIcon3 {
+  stroke: var(--text);
   stroke-dasharray: 8.089302062988281;
   stroke-dashoffset: 8.089302062988281;
 }
-.cls-1{fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:1.91px;}.cls-2{fill:#ffffff;}
+.cls-1{fill:none;stroke-miterlimit:10;stroke-width:1.91px;}.cls-2{fill:var(--text);}
 </style>
