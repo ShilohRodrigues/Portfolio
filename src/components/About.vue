@@ -56,18 +56,22 @@ onUnmounted(() => {
       <p class="point-form">I'm currently looking for an opportunity to complete an <span class="highlight">internship</span> in the field before graduating.</p>
       <h3>What am I good at?</h3>
       <p class="point-form">Most experienced with:</p>
-      <Tag name="Java"/>
-      <Tag name="C++"/>
-      <Tag name="Visual Basic .NET"/>
-      <Tag name="JavaScript"/>
-      <Tag name="Vue.js"/>
-      <Tag name="Liquid"/>
+      <div class="tags">
+        <Tag name="Java"/>
+        <Tag name="C++"/>
+        <Tag name="Visual Basic .NET"/>
+        <Tag name="JavaScript"/>
+        <Tag name="Vue.js"/>
+        <Tag name="Liquid"/>
+      </div>
       <p class="point-form">Some experience with:</p>
-      <Tag name="PHP"/>
-      <Tag name="SQL"/>
-      <Tag name="C"/>
-      <Tag name="C#"/>
-      <Tag name="GIT"/>
+      <div class="tags">
+        <Tag name="PHP"/>
+        <Tag name="SQL"/>
+        <Tag name="C"/>
+        <Tag name="C#"/>
+        <Tag name="GIT"/>
+      </div>   
     </div>
   </div>
 </template>

@@ -32,7 +32,7 @@ const props = defineProps({
         </template>
       </navigation>
       <Pagination v-if="slidesCount > 1"/>
-      <p class="swipe-txt" v-if="slidesCount > 1">Swipe for more! --></p>
+      <p class="swipe-txt" v-if="slidesCount > 1"></p>
     </template> 
   </carousel>
 </template>
@@ -50,6 +50,9 @@ const props = defineProps({
     gap: 1rem;
     width: 97%;
   }
+  .swipe-txt:after {
+    content: "Scroll for more! -->";
+  }
 }
 
 @media only screen and (max-width: 900px) {
@@ -58,6 +61,9 @@ const props = defineProps({
   }
   .slider-btn {
     display: none;
+  }
+  .swipe-txt:after {
+    content: "Swipe for more! -->";
   }
 }
 
