@@ -148,7 +148,7 @@ button {
 }
 
 .draw-svg {
-  animation: draw 3s ease;
+  animation: draw 2s ease-in;
   animation-fill-mode: forwards;
 }
 
@@ -170,7 +170,7 @@ button {
   width: 1.8rem;
 }
 .socials svg:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 .tags {

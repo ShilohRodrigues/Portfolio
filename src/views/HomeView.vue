@@ -72,6 +72,7 @@ const lightModeToggle = e => {
     <section id="contact">
       <Contact />
     </section>
+    <p class="info">Made with Vue.js</p>
   </main>
 </template>
 
@@ -89,6 +90,11 @@ main {
   min-height: 550px;
   padding-top: var(--nav-height);
 }
+.info {
+  position: absolute;
+  bottom: 1rem;
+  right: 0;
+}
 section {
   padding: 100px 0;
 }
@@ -96,7 +102,7 @@ section {
 .switches {
   display: grid;
   position: absolute;
-  top: 6rem;
+  top: var(--nav-height);
   right: 0;
   width: 100%;
 }
