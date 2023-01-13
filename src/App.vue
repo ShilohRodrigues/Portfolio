@@ -90,13 +90,7 @@ provide('mouseEvent', onMouseMove);
       </a>
       <RouterLink to="/#home">Home</RouterLink>
       <RouterLink to="/#about">About</RouterLink>
-      <a class="dropdown">Projects
-        <div class="dropdown-items">
-          <RouterLink class="dropdown-item" to="/#client">For Clients</RouterLink>
-          <RouterLink class="dropdown-item" to="/#fun">For Fun</RouterLink>
-          <RouterLink class="dropdown-item" to="/#school">For School</RouterLink>
-        </div>
-      </a>
+      <RouterLink to="/#projects">Projects</RouterLink>
       <RouterLink to="/#contact">Get In Touch</RouterLink>
       <a href="./ShilohRodriguesCV_tex.pdf" target="_blank">Resume</a>
     </nav>

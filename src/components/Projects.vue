@@ -1,10 +1,49 @@
 <script setup>
-import ProjectCarousel from "../components/ProjectCarousel.vue"
+import ProjectGrid from "./ProjectGrid.vue"
 import { ref, onMounted, onUnmounted } from 'vue'
 import Typed from 'typed.js';
 import { onIntersect } from "../composables/onIntersect";
 
 const projectList = [
+  {title: "Nurse John Merch Store",
+  desc: [
+  "Shopify store for my client to sell their merchandise.",
+  "Contains custom features created with Liquid, such as a custom checkout with a free shipping counter"
+  ], 
+  image: "NurseJohn2",
+  url: "https://nursejohnn.com/",
+  tagList: ['Liquid',
+          'Shopify']
+  },
+  {title: "Sorting Algorithm Visualizer",
+  desc: [
+  "Visual demonstration of different sorting algorithms.",
+  "Programmed using vanilla JavaScript.",
+  "Allowed me to experiment with asynchronous functions and data visualization."
+  ],
+  image: "SortingAlgo",
+  url: "https://shilohrodrigues.github.io/SortingAlgorithmVis/",
+  tagList: ['JavaScript',
+            'Chart.js']
+  },
+  {title: "Pong",
+  desc: [
+  "JavaScript Pong game.",
+  "Contains two player settings as well as a computer operated opponent."
+  ],
+  image: "Pong",
+  url: "https://shilohrodrigues.github.io/Pong/",
+  tagList: ['JavaScript']
+  },
+  {title: "Retro Snake",
+  desc: [
+  "JavaScript Snake game.",
+  "Contains different in game settings and a high score counter."
+  ],
+  image: "Snake1",
+  url: "https://shilohrodrigues.github.io/Snake/",
+  tagList: ['JavaScript']
+  },
   {title: "Mock Grocery Store",
   desc: [
   "Mock grocery store website with a back-end written in PHP.",
@@ -15,7 +54,8 @@ const projectList = [
   image: "ConcordiaFoods",
   tagList: ['PHP',
             'SQL']
-  }]
+  }
+];
 
 const observer = ref({});
 const scrollRef = ref({});
@@ -26,7 +66,7 @@ const lineState = ref('header-line-hide');
 // This is the callback being called on intersection
 const onEnter = () => {
   new Typed(header.value, {
-    strings: ["For School"],
+    strings: ["Projects"],
     typeSpeed: 80,
     showCursor: false,
     onComplete: (self) => {
@@ -43,7 +83,7 @@ const onExit = () => {
 // When the component is mounted, start observing
 onMounted(() => {
   observer.value = onIntersect(scrollRef.value, onEnter, onExit, true, {
-    threshold: 0.2,
+    threshold: 0.6,
   });
 });
 
@@ -60,7 +100,7 @@ onUnmounted(() => {
       <div class="header-line" :class="lineState"></div>
     </div>   
     <div :class="visibility" class="animate-me">
-      <ProjectCarousel
+      <ProjectGrid
         :projects = projectList
         />
     </div>

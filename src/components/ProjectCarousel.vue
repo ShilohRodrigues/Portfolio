@@ -2,7 +2,6 @@
 import Project from "../components/Project.vue"
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
-import { ref } from 'vue'
 
 const props = defineProps({
   projects: Array

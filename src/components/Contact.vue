@@ -71,8 +71,4 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-  .center-me {
-    display: grid;
-    place-items: center;
-  }
 </style>

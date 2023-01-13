@@ -34,7 +34,7 @@ if (props.url == null) hasURL.value = 'disabled';
       <img :src=getImageUrl(image)>
     </a>
     <div v-if="image == null" class="iframe-container-outer">
-      <div class="iframe-container">
+  		<div class="iframe-container">
         <iframe :src=url></iframe>
       </div> 
     </div>  
@@ -66,10 +66,10 @@ iframe {
     max-width: 30%;
   }
   .img-container {
-    max-width: 60%;
+    max-width: 50%;
   }
   .iframe-container-outer {
-    width: 60%;
+    width: 50%;
   }
 }
 
