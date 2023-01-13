@@ -20,8 +20,13 @@
   padding: 0;
 }
 
+@font-face {
+  font-family: Cas;
+  src: url(/fonts/Cascadia/cascadia-webfont.woff);
+}
+
 html, body{
-  font-family: "cascadia-webfont";
+  font-family: Cas;
   color: var(--text);
   background-color: var(--bg);
   margin: 0;
