@@ -26,6 +26,17 @@ const projectList = [
   tagList: ['JavaScript',
             'Chart.js']
   },
+  {title: "Mock Grocery Store",
+  desc: [
+  "Mock grocery store website with a back-end written in PHP.",
+  "Contains user authentication with a users database.",
+  "Contains a functional products and orders database.",
+  "Has full back-end controls only accessible by an admin user, such as the ability to add or edit products & orders."
+  ],
+  image: "ConcordiaFoods",
+  tagList: ['PHP',
+            'SQL']
+  },
   {title: "Pong",
   desc: [
   "JavaScript Pong game.",
@@ -43,17 +54,6 @@ const projectList = [
   image: "Snake1",
   url: "https://shilohrodrigues.github.io/Snake/",
   tagList: ['JavaScript']
-  },
-  {title: "Mock Grocery Store",
-  desc: [
-  "Mock grocery store website with a back-end written in PHP.",
-  "Contains user authentication with a users database.",
-  "Contains a functional products and orders database.",
-  "Has full back-end controls only accessible by an admin user, such as the ability to add or edit products & orders."
-  ],
-  image: "ConcordiaFoods",
-  tagList: ['PHP',
-            'SQL']
   }
 ];
 
@@ -83,7 +83,7 @@ const onExit = () => {
 // When the component is mounted, start observing
 onMounted(() => {
   observer.value = onIntersect(scrollRef.value, onEnter, onExit, true, {
-    threshold: 0.6,
+    threshold: 0.3,
   });
 });
 

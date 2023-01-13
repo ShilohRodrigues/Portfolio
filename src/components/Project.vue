@@ -1,6 +1,7 @@
 <script setup>
 
 import Tag from "../components/Tag.vue"
+import Link from "../components/icons/Link.vue"
 import { ref } from 'vue'
 
 const props = defineProps({
@@ -18,6 +19,14 @@ const getImageUrl = (name) => {
 const hasURL = ref('');
 if (props.url == null) hasURL.value = 'disabled';
 
+const hover = ref('invisible-img-link');
+const hoverOn = () => {
+  hover.value = 'visible-img-link';
+}
+const hoverOff = () => {
+  hover.value = 'invisible-img-link';
+}
+
 </script>
 
 <template>
@@ -30,9 +39,21 @@ if (props.url == null) hasURL.value = 'disabled';
         <Tag v-for="tag in tagList" :name=tag />
       </div> 
     </div> 
-    <a class="img-container" v-if="image != null" :href=url target="_blank">
+    <div 
+    class="img-container" 
+    v-if="image != null" 
+    @mouseover="hoverOn" 
+    @mouseleave="hoverOff">
       <img :src=getImageUrl(image)>
-    </a>
+      <a
+      v-if="url != null"
+      :href="url"
+      target="_blank"
+      :class="hover" 
+      class="img-link center-me">
+        <div><Link /></div>
+      </a>
+    </div>
     <div v-if="image == null" class="iframe-container-outer">
   		<div class="iframe-container">
         <iframe :src=url></iframe>
@@ -41,9 +62,33 @@ if (props.url == null) hasURL.value = 'disabled';
 </template>
 
 <style scoped>
+.img-container {
+  position: relative;
+}
 .img-container img {
   width: 100%;
   height: auto;
+  max-height: 27rem;
+}
+.img-link {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  padding: 0.5rem;
+  transition: all 0.5s;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transform: scale(0.9);
+  z-index: -2;
+}
+.img-link div {
+  background-color: unset;
+}
+.visible-img-link {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  z-index: 2 !important;
 }
 .iframe-container {
   position: relative;

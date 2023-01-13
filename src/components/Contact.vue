@@ -62,7 +62,7 @@ onUnmounted(() => {
         </a>      
       </div>
       <div class="center-me">
-        <a href="mailto:shilohrodrigues@hotmail.com">
+        <a href="mailto:shilohrodrigues@hotmail.com" target="_blank">
           <h3>Send me an Email!</h3>
         </a>
       </div>  

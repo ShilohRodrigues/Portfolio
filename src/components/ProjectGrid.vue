@@ -21,22 +21,22 @@ const clicked = ref(null);
 <template>
   <Transition>
     <div v-if="clicked==null" class="project-grid">
-      <a
+      <div
       v-for="(project, index) in projects" 
       @mouseover="hover=index" 
-      @mouseleave="hover=false" class="grid-item"
-      href="#projects">
+      @mouseleave="hover=false" class="grid-item">
         <img :src=getImageUrl(project.image)>
-        <div 
+        <a 
         @click="clicked=index"
         :class="(hover===index) ? 'visible-p-info' : 'invisible-p-info'" 
-        class="project-info center-me">
+        class="project-info center-me"
+        href="#projects">
           <div>
             <h3>{{ project.title }}</h3>
             <p class="expand-txt">Expand <span style="vertical-align: middle;"><Expand /></span></p>         
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
     </div>  
   </Transition>
   <template v-for="(project, index) in projects">
@@ -60,18 +60,19 @@ const clicked = ref(null);
 </template>
 
 <style scoped>
-.project-grid {
-  display: grid;
-  place-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(min(17rem, 100%), 1fr));
+.project-grid { 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
-  margin: 2rem 6rem;
+  margin: 2rem auto;
   transform-origin: top left;
 }
 .grid-item {
   position: relative;
   text-align: center;
   cursor: pointer;
+  max-width: 20rem;
 }
 .grid-item img {
   object-fit: cover;
@@ -87,7 +88,6 @@ const clicked = ref(null);
   padding: 0.5rem;
   transition: all 0.5s;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 2;
 }
 .project-info div {
   background-color: unset;
@@ -100,31 +100,37 @@ const clicked = ref(null);
 }
 .visible-p-info {
   opacity: 1;
-  transform: translateY(0);
+  transform: scale(1);
+  z-index: 2;
 }
 .invisible-p-info {
   opacity: 0;
-  transform: translateY(5%);
+  transform: scale(0.9);
+  z-index: -2;
 }
 
 .project {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 2rem;
   width: 100%;
+  top: 0;
   text-align:  left !important;
   z-index: 3;
-  transform-origin: 5rem 0;
+  transform-origin: bottom right;
 }
-
 .v-enter-active, .v-leave-active {
-  transition: scale 0.5s ease;
+  transition: scale 0.5s ease; 
+  position: absolute;
 }
 .v-enter-from, .v-leave-to {
   scale: 0;
 }
-
+.v-leave-to {
+  position: static;
+}
 .close-project {
   position: absolute;
   top: 0;

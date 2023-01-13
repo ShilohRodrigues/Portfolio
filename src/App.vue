@@ -29,7 +29,7 @@ const menuState = ref("");
 const burgerState = ref("");
 const closeState = ref("");
 
-const openMenu = () => {
+const toggleMenu = () => {
   if (menuState.value == "") {
     menuState.value = "show-nav";
     burgerState.value = "hide-burger";
@@ -81,18 +81,18 @@ provide('mouseEvent', onMouseMove);
     class="app-wrapper" 
     :style="{ backgroundColor: `hsl(${x}, ${y}%, ${z}%)` }">
     <header id="navBar" :class="navStyle">
-    <a class="hamburger" :class="burgerState" @click="openMenu">
+    <a class="hamburger" :class="burgerState" @click="toggleMenu">
       <Hamburger />
     </a>
     <nav :class="menuState">
-      <a class="close" :class="closeState" @click="openMenu">
+      <a class="close" :class="closeState" @click="toggleMenu">
         <Close />
       </a>
-      <RouterLink to="/#home">Home</RouterLink>
-      <RouterLink to="/#about">About</RouterLink>
-      <RouterLink to="/#projects">Projects</RouterLink>
-      <RouterLink to="/#contact">Get In Touch</RouterLink>
-      <a href="./ShilohRodriguesCV_tex.pdf" target="_blank">Resume</a>
+      <RouterLink to="/#home" @click="toggleMenu">Home</RouterLink>
+      <RouterLink to="/#about" @click="toggleMenu">About</RouterLink>
+      <RouterLink to="/#projects" @click="toggleMenu">Projects</RouterLink>
+      <RouterLink to="/#contact" @click="toggleMenu">Get In Touch</RouterLink>
+      <a href="./ShilohRodriguesCV_tex.pdf" target="_blank" @click="toggleMenu">Resume</a>
     </nav>
   </header>
     <RouterView />

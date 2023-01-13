@@ -94,7 +94,7 @@ a > h3 {
   position: relative;
 }
 
-a:not(.disabled) > h3::after {
+a:not(.disabled) > h3::after, .animated-link::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -107,7 +107,7 @@ a:not(.disabled) > h3::after {
   transition: transform 0.25s ease-out;
 }
 
-a > h3:hover::after {
+a > h3:hover::after, .animated-link:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
