@@ -21,7 +21,7 @@
 }
 
 html, body{
-  font-family: "Cascadia Mono";
+  font-family: "cascadia-webfont";
   color: var(--text);
   background-color: var(--bg);
   margin: 0;
