@@ -73,6 +73,7 @@ const clicked = ref(null);
   text-align: center;
   cursor: pointer;
   max-width: 20rem;
+  max-height: 20rem;
 }
 .grid-item img {
   object-fit: cover;

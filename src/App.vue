@@ -7,7 +7,6 @@ import Close from "../src/components/icons/Close.vue"
 //// For hiding the navigation on scroll
 onMounted(() => {
   window.addEventListener('scroll', onScroll);
-  window.addEventListener('mousemove', onMouseMove);
 }) 
 const navStyle = ref("nav-top");
 let lastScrollY = window.scrollY;

@@ -23,12 +23,22 @@ const colorToggle = e => {
 }
 
 const lightCheckbox = ref(null);
+
+onMounted(() => {
+  if (localStorage.getItem('lightMode') == 'true') {
+    lightCheckbox.value.checked = true;
+    lightModeToggle();
+  }
+})
+
 const lightModeToggle = e => {
   if (lightCheckbox.value.checked) {
     lightMode(true);
+    localStorage.setItem('lightMode', true);
   }
   else {
     lightMode(false);
+    localStorage.setItem('lightMode', false);
   }
 }
 
@@ -37,13 +47,6 @@ const lightModeToggle = e => {
 <template>
   <main>  
     <div class="switches">
-      <div class="switch-container">
-        <p>Color Effect --> </p>
-        <label class="switch">
-          <input ref="colorCheckbox" type="checkbox" checked @change="colorToggle">
-          <span class="slider round"></span>
-        </label>
-      </div> 
       <div class="switch-container">
         <p>Light Mode --> </p>
         <label class="switch">
@@ -64,7 +67,16 @@ const lightModeToggle = e => {
     <section id="contact">
       <Contact />
     </section>
-    <p class="info">Made with Vue.js</p>
+    <div class="footer">
+      <div class="color-effect switch-container">
+        <p>Color Effect --> </p>
+        <label class="switch">
+          <input ref="colorCheckbox" type="checkbox" @change="colorToggle">
+          <span class="slider round"></span>
+        </label>
+      </div> 
+      <p class="info">Made with Vue.js</p>
+    </div>
   </main>
 </template>
 
@@ -83,8 +95,11 @@ main {
   min-height: 550px;
   padding-top: var(--nav-height);
 }
-.info {
+.footer {
+  display: flex;
+  justify-content: space-between;
   position: absolute;
+  width: 100%;
   bottom: 1rem;
   right: 0;
 }
@@ -172,6 +187,9 @@ input:checked + .slider:before {
 @media only screen and (max-width: 692px) {
   .switches {
     top: 1rem;
+  }
+  .color-effect {
+    display: none;
   }
 }
 
