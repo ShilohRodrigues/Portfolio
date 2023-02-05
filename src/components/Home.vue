@@ -3,7 +3,6 @@ import { ref, onMounted } from "vue";
 import Typed from 'typed.js';
 import Github from "../components/icons/Github.vue"
 import Linkedin from "../components/icons/Linkedin.vue"
-import Insta from "../components/icons/Insta.vue"
 
 const name = ref(null);
 const title = ref(null);
@@ -39,10 +38,7 @@ onMounted(() => {
       </a>
       <a v-if="doneTyping" href="https://www.linkedin.com/in/shiloh-rodrigues-916004118/" target="_blank">
         <Linkedin />
-      </a>
-      <a v-if="doneTyping" href="https://www.instagram.com/shilohrodrigues/" target="_blank">
-        <Insta />
-      </a>      
+      </a>     
     </div>
   </div>
 </template>

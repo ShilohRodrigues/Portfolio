@@ -4,7 +4,6 @@ import Typed from 'typed.js';
 import { onIntersect } from "../composables/onIntersect";
 import Github from "../components/icons/Github.vue"
 import Linkedin from "../components/icons/Linkedin.vue"
-import Insta from "../components/icons/Insta.vue"
 
 const observer = ref({});
 const scrollRef = ref({});
@@ -56,10 +55,7 @@ onUnmounted(() => {
         </a>
         <a href="https://www.linkedin.com/in/shiloh-rodrigues-916004118/" target="_blank">
           <Linkedin />
-        </a>
-        <a href="https://www.instagram.com/shilohrodrigues/" target="_blank">
-          <Insta />
-        </a>      
+        </a>     
       </div>
       <div class="center-me">
         <a href="mailto:shilohrodrigues@hotmail.com" target="_blank">
