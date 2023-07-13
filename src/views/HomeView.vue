@@ -68,13 +68,13 @@ const lightModeToggle = e => {
       <Contact />
     </section>
     <div class="footer">
-      <div class="color-effect switch-container">
-        <p>Color Effect --> </p>
+      <!--<div class="color-effect switch-container">
+        <p>Color Effect -> </p>
         <label class="switch">
           <input ref="colorCheckbox" type="checkbox" @change="colorToggle">
           <span class="slider round"></span>
         </label>
-      </div> 
+      </div> -->
       <p class="info">Made with Vue.js</p>
     </div>
   </main>
@@ -97,7 +97,7 @@ main {
 }
 .footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   position: absolute;
   width: 100%;
   bottom: 1rem;

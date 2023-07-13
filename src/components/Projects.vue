@@ -5,7 +5,18 @@ import Typed from 'typed.js';
 import { onIntersect } from "../composables/onIntersect";
 
 const projectList = [
-  {title: "Nurse John Merch Store",
+{title: "Entreprises Nortec Landing Page",
+  desc: [
+  "Developed a custom WordPress landing page for a construction company, showcasing their services and portfolio.",
+  "Hosted the website on an Amazon EC2 instance, ensuring scalability and reliability.",
+  "Configured Amazon SES for seamless email communication, enabling the client to send and receive emails directly from the website."
+  ], 
+  image: "Nortec",
+  url: "https://www.entreprisesnortec.com/",
+  tagList: ['WordPress',
+          'AWS']
+  },  
+{title: "Nurse John Merch Store",
   desc: [
   "Shopify store for my client to sell their merchandise.",
   "Contains custom features created with Liquid, such as a custom checkout with a free shipping counter"

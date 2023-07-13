@@ -50,8 +50,9 @@ onUnmounted(() => {
     <div :class="visibility" class="animate-me">
       <h3>Who am I?</h3>
       <p class="point-form">I'm currently a <span class="highlight">Computer Science</span> student at Concordia University set to graduate in <span class="highlight">December 2023</span>.</p>
-      <p class="point-form">I have completed a 3 year DEC in <span class="highlight">Engineering Physics Technology</span> at John Abbott College.</p>
-      <p class="point-form">I have experience as an electronics technician, working on automating test benches.</p>
+      <p class="point-form">Completed a 3 year DEC in <span class="highlight">Engineering Physics Technology</span> at John Abbott College.</p>
+      <p class="point-form">I have recently began taking contract projects as a <span class="highlight">freelance web developer</span>.</p>
+      <p class="point-form">I also have experience as an electronics technician, primarily working on automating test benches.</p>
       <h3>What am I looking for?</h3>
       <p class="point-form">I'm currently looking for an opportunity to complete an <span class="highlight">internship</span> in the field before graduating.</p>
       <h3>What am I good at?</h3>
@@ -62,7 +63,9 @@ onUnmounted(() => {
         <Tag name="Visual Basic .NET"/>
         <Tag name="JavaScript"/>
         <Tag name="Vue.js"/>
+        <Tag name="WordPress"/>
         <Tag name="Liquid"/>
+        <Tag name="AWS"/>
       </div>
       <p class="point-form">Some experience with:</p>
       <div class="tags">
