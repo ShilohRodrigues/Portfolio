@@ -54,7 +54,7 @@ onUnmounted(() => {
       <p class="point-form">I have recently began taking contract projects as a <span class="highlight">freelance web developer</span>.</p>
       <p class="point-form">I also have experience as an electronics technician, primarily working on automating test benches using VB.net applcations.</p>
       <h3>What am I looking for?</h3>
-      <p class="point-form">I'm currently looking for an an entry level <span class="highlight">software developer</span> position that aligns with my skills.</p>
+      <p class="point-form">I'm currently looking for an entry level <span class="highlight">software developer</span> position that aligns with my skills.</p>
       <h3>What am I good at?</h3>
       <p class="point-form">Most experienced with:</p>
       <div class="tags">
