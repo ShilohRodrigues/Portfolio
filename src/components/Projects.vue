@@ -5,7 +5,7 @@ import Typed from 'typed.js';
 import { onIntersect } from "../composables/onIntersect";
 
 const projectList = [
-{title: "Entreprises Nortec Landing Page",
+  {title: "Entreprises Nortec Landing Page",
   desc: [
   "Developed a custom WordPress landing page for a construction company, showcasing their services and portfolio.",
   "Hosted the website on an Amazon EC2 instance, ensuring scalability and reliability.",
@@ -16,7 +16,7 @@ const projectList = [
   tagList: ['WordPress',
           'AWS']
   },  
-{title: "Nurse John Merch Store",
+  {title: "Nurse John Merch Store",
   desc: [
   "Shopify store for my client to sell their merchandise.",
   "Contains custom features created with Liquid, such as a custom checkout with a free shipping counter"
@@ -25,6 +25,16 @@ const projectList = [
   url: "https://nursejohnn.com/",
   tagList: ['Liquid',
           'Shopify']
+  },
+  {title: "Parallel Quicksort Algorithms",
+  desc: [
+  "Quicksort algorithm implemented on a parallel computer using MPI and programmed in C.",
+  "Implementation of a Hypercube Quicksort algorithm, and a parallel quicksort using regular sampling for improved load balancing."
+  ],
+  image: "ParallelSorting",
+  url: "https://github.com/ShilohRodrigues/ParallelSorting",
+  tagList: ['C',
+            'MPI']
   },
   {title: "Sorting Algorithm Visualizer",
   desc: [
