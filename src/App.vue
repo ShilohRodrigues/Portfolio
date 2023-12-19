@@ -91,7 +91,7 @@ provide('mouseEvent', onMouseMove);
       <RouterLink to="/#about" @click="toggleMenu">About</RouterLink>
       <RouterLink to="/#projects" @click="toggleMenu">Projects</RouterLink>
       <RouterLink to="/#contact" @click="toggleMenu">Get In Touch</RouterLink>
-      <a href="./ShilohRodriguesCV_tex.pdf" target="_blank" @click="toggleMenu">Resume</a>
+      <a href="./ShilohRodriguesCV.pdf" target="_blank" @click="toggleMenu">Resume</a>
     </nav>
   </header>
     <RouterView />
