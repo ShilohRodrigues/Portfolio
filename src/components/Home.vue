@@ -15,7 +15,7 @@ onMounted(() => {
     showCursor: false,
     onComplete: (self) => {
       new Typed(title.value, {
-        strings: ["Computer Science Student"],
+        strings: ["Software Developer"],
         typeSpeed: 30,
         showCursor: false,
         onComplete: (self) => {
