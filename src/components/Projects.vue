@@ -5,6 +5,17 @@ import Typed from 'typed.js';
 import { onIntersect } from "../composables/onIntersect";
 
 const projectList = [
+  {title: "Freelance Web Development Landing",
+  desc: [
+  "Landing page made for my freelance web development portfolio.",
+  "Coded with HTML, CSS, and JS, hosted on Netlify. Features a contact form"
+  ], 
+  image: "webdesigns",
+  url: "https://shilohwebdesigns.com/",
+  tagList: ['CSS',
+          'JavaScript',
+          'Design']
+  }, 
   {title: "Entreprises Nortec Landing Page",
   desc: [
   "Developed a custom WordPress landing page for a construction company, showcasing their services and portfolio.",
