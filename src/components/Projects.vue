@@ -16,6 +16,17 @@ const projectList = [
           'JavaScript',
           'Design']
   }, 
+  {title: "LTC Nutrition Company Website",
+  desc: [
+  "Custom company website made for my client, outlining their services and information.",
+  "Coded with HTML, CSS, and JS, hosted on Netlify. Features a contact form"
+  ], 
+  image: "LTC",
+  url: "https://ltc-performance.com/",
+  tagList: ['CSS',
+          'JavaScript',
+          'Design']
+  }, 
   {title: "Entreprises Nortec Landing Page",
   desc: [
   "Developed a custom WordPress landing page for a construction company, showcasing their services and portfolio.",
